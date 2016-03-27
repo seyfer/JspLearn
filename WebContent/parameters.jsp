@@ -7,12 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-home index
+<%
+String name = request.getParameter("name");
 
-<a href="/jpa/Controller?action=login">login</a>
-
-<a href="/jpa/Controller?action=error">error</a>
-
-
+out.println(name);
+%>
 </body>
 </html>

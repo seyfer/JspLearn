@@ -1,34 +1,28 @@
-<%@page import="java.util.Date, gui.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Hello World</title>
+<title>Insert title here</title>
 </head>
 <body>
-<!-- Hello World -->
-
 <%
-Date today = new Date();
-
-String text = "today : " + today.toString();
-
-out.println(text);
-
-TextOutput textOutput = new TextOutput();
-
-out.print(textOutput.getInfo());
+for(int i = 0;i<5;i++) {
 %>
-<br>
 
-<%="Hello From Java"%>
-<br>
+<p>lol <%=i %></p>
 
-<%=
-new Date()
-%>
-<br>
+<% } %>
+
+
+<% 
+String id = request.getParameter("id");
+
+if(id != null) {%>
+
+<%=id %>
+
+<% } %>
 </body>
 </html>

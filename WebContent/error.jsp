@@ -7,12 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-home index
-
-<a href="/jpa/Controller?action=login">login</a>
-
-<a href="/jpa/Controller?action=error">error</a>
-
-
+ERROR!!!!
 </body>
 </html>

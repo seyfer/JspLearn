@@ -7,12 +7,16 @@
 <title>Insert title here</title>
 </head>
 <body>
-home index
 
-<a href="/jpa/Controller?action=login">login</a>
+<!-- Static -->
+<%@ include file="copyright.txt" %>
 
-<a href="/jpa/Controller?action=error">error</a>
+<!-- Dynamic -->
+<jsp:include page="copyright.txt"></jsp:include>
 
+<%@ include file="variables.jsp" %>
+
+<%= name %>
 
 </body>
 </html>
