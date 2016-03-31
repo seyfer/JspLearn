@@ -7,13 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-home index
 
-<a href="/jsp/Controller?action=login">login</a>
+<jsp:useBean id="user" class="beans.User" scope="session"></jsp:useBean>
+<jsp:setProperty property="*" name="user"/>
 
-<a href="/jsp/Controller?action=error">error</a>
-
-<a href="/jsp/mvc/FormController?action=login">mvc login</a>
+<%=user.getEmail() %>
+<%=user.getPassword() %>
 
 </body>
 </html>

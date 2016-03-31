@@ -7,13 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-home index
-
-<a href="/jsp/Controller?action=login">login</a>
-
-<a href="/jsp/Controller?action=error">error</a>
-
-<a href="/jsp/mvc/FormController?action=login">mvc login</a>
-
+login success <%=request.getAttribute("email") %>
 </body>
 </html>

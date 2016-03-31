@@ -8,8 +8,22 @@
 </head>
 <body>
 
+<label>get form</label>
 <form action="/jsp/FormsController" method="get">
-<input type="text" name="user" />
+<input type="text" name="email" />
+<input type="submit" value="ok" />
+</form>
+
+
+<label>post form</label>
+<form action="/jsp/formhandler.jsp" method="post">
+
+<label>email</label>
+<input type="text" name="email" />
+
+<label>password</label>
+<input type="text" name="password" />
+
 <input type="submit" value="ok" />
 </form>
 
