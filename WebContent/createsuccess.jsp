@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Success</title>
+<title>Account Created</title>
 
 <style  type="text/css">
 
@@ -31,7 +31,7 @@
 
 <div id="message">
 
-<p>You are logged in.</p>
+<p>Account created with email:</p>
 
 <p><%= request.getAttribute("email") %></p>
 

@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Login</title>
+<title>Create Account</title>
 
 <style  type="text/css">
 
@@ -26,7 +26,7 @@ table {
 	background-color: #CCCCFF;
 }
 
-.login-error {
+.message {
 	font-size: 16px;
 	font-weight: bold;
 	font-color: red;
@@ -42,21 +42,22 @@ table {
 
 <div id="login">
 
-<h3>Log In</h3>
+<h3>New Account</h3>
 
-<form method="post" action="<%= response.encodeUrl(request.getContextPath() + "/LoginController?action=dologin") %>">
+<form method="post" action="<%= response.encodeUrl(request.getContextPath() + "/LoginController?action=createaccount") %>">
 
-<input type="hidden" name="action" value="dologin" />
+<input type="hidden" name="action" value="createAccount" />
 
 <table>
 
 <tr><td class="align-right">Email address: </td><td><input type="text" name="email" value="<%= request.getAttribute("email") %>"/></td></tr>
-<tr><td class="align-right">Password: </td><td><input type="password" name="password" value="<%= request.getAttribute("password") %>"/></td></tr>
+<tr><td class="align-right">Password: </td><td><input type="password" name="password" value=""/></td></tr>
+<tr><td class="align-right">Repeat password: </td><td><input type="password" name="repeatpassword" value=""/></td></tr>
 <tr><td class="align-right" colspan="2"><input type="submit" value="Log in"/></td></tr>
 
 </table>
 
-<p class="login-error"><%= request.getAttribute("message") %></p>
+<p class="message"><%= request.getAttribute("message") %></p>
 
 </form>
 
