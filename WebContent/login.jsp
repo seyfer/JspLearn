@@ -54,7 +54,7 @@ table {
 <tr><td class="align-right">Password: </td><td><input type="password" name="password" value="<%= request.getAttribute("password") %>"/></td></tr>
 <tr><td class="align-right" colspan="2"><input type="submit" value="Log in"/></td></tr>
 
-</table>
+<!-- </table> -->
 
 <p class="login-error"><%= request.getAttribute("message") %></p>
 

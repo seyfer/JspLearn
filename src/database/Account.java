@@ -40,7 +40,7 @@ public class Account {
 	}
 
 	public void create(String email, String password) throws SQLException {
-		String sql = "insert into userss (email, password) values (?, ?)";
+		String sql = "insert into users (email, password) values (?, ?)";
 
 		PreparedStatement stmt = conn.prepareStatement(sql);
 
@@ -54,7 +54,7 @@ public class Account {
 
 	public boolean exists(String email) throws SQLException {
 
-		String sql = "select count(*) as count from userss where email=?";
+		String sql = "select count(*) as count from users where email=?";
 
 		PreparedStatement stmt = conn.prepareStatement(sql);
 
