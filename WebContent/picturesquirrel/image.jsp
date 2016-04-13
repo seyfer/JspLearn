@@ -28,7 +28,7 @@
 			value="${image.average_ranking}" />
 
 		<%-- If the user has clicked to rate the image, do the rating. --%>
-		<c:if test='${param.action == "rate"}'>
+		<c:if test='${param.doAction == "rate"}'>
 			<c:set scope="page" var="newRating"
 				value="${(image.average_ranking * image.rankings + param.rating)/(image.rankings + 1)}" />
 
@@ -43,7 +43,9 @@
 				<sql:param>${image.rankings+1}</sql:param>
 				<sql:param>${param.image}</sql:param>
 			</sql:update>
-
+			
+<%-- 			<c:set scope="page" var="param.action" value="image"></c:set> --%>
+<%-- 			<c:param name="action" value="image"></c:param> --%>
 		</c:if>
 
 	</sql:transaction>
@@ -54,7 +56,7 @@
 			value="${fn:toUpperCase(fn:substring(image.stem, 0, 1))}${fn:toLowerCase(fn:substring(image.stem, 1, -1))}" />
 	</H2>
 	<span class="rating">Rated: <fmt:formatNumber
-			value="${average_ranking}" maxFractionDigits="1" /></span>
+			value="${average_ranking}" maxFractionDigits="1" maxIntegerDigits="2" /></span>
 
 	<%-- Output the image and the rating form --%>
 	<table style="border: none;">
@@ -66,8 +68,8 @@
 				<ps:image width="200" stem="${image.stem}"
 					extension="${image.image_extension}" /></td>
 			<td>
-				<form action='<c:url value="/gallery" />' method="post">
-					<input type="hidden" name="action" value="rate" /> <input
+				<form action='<c:url value="/gallery?action=image&image=${image.id}" />' method="post">
+					<input type="hidden" name="doAction" value="rate" /> <input
 						type="hidden" name="image" value="${image.id}" />
 
 					<table style="padding: 20px; border: none;">
